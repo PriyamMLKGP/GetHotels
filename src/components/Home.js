@@ -1,28 +1,21 @@
 import React from 'react'
-import { useEffect, useState } from 'react';
-import { setHotels } from '../actions';
-import hotelData from '../data/hotels.json';
-import { useDispatch, useSelector } from 'react-redux';
-import Navbar from './Navbar';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import HotelCard from './HotelCard';
 import { Row, Col, Tabs, Button } from 'antd';
 
 export default function Home() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(setHotels(hotelData));
-  }, []);
+  
   const hotels = useSelector(state => state.hotels);
   const [activeTab, setActiveTab] = useState('NewYork'); // Default active tab
   const [visibleCards, setVisibleCards] = useState(6);
 
   const handleShowMore = () => {
-    setVisibleCards(prevCount => prevCount + 6);
+    setVisibleCards(prevCount => prevCount + 3);
   };
 
   return (
     <div>
-    <Navbar />
 
     <Tabs 
       style={{paddingTop: "50px"}}

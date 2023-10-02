@@ -1,10 +1,17 @@
 import React from 'react'
 import { Layout } from 'antd';
 import GlobalOutlined from '@ant-design/icons/GlobalOutlined';
-
+import { useEffect } from 'react';
+import { setHotels } from '../actions';
+import hotelData from '../data/hotels.json';
+import { useDispatch } from 'react-redux';
 const { Header } = Layout;
 
 export default function Navbar() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setHotels(hotelData));
+  }, []);
   return (
     <div>
         <Layout className="layout">

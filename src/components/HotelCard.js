@@ -1,6 +1,6 @@
 import { useState, React } from 'react';
 import { Card, Button, Tag, Space, Tooltip } from 'antd';
-import { HeartOutlined, HeartFilled, HomeOutlined } from '@ant-design/icons';
+import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 
 export default function HotelCard(props) {
 
@@ -12,7 +12,7 @@ export default function HotelCard(props) {
       style={{ width: "100%", height: "100%" }}
       cover={
         <div style={{ position: 'relative' }}>
-          <img alt="example" src={props.hotel.imageURL} style={{ maxWidth: '300px', maxHeight:"200px" }} />
+          <img alt="example" src={props.hotel.imageURL} style={{width: '100%', height: 'auto' }} />
           
           <Tooltip title="For Rent" key="forRent">
             <Tag color="blue" style={{ position: 'absolute', top: 10, left: 10 }}>
@@ -40,7 +40,7 @@ export default function HotelCard(props) {
         <span><Tag color="green">{props.hotel.size}</Tag></span>
       </Space>
       <h2>{props.hotel.rent}</h2>
-      <Button type="primary">Show More</Button>
+      <Button type="primary" href={`/property/${props.hotel.id}`}>Show More</Button>
     </Card>
     </div>
   )
