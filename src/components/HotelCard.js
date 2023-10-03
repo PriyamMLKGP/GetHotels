@@ -40,7 +40,7 @@ export default function HotelCard(props) {
         <span><Tag color="green">{props.hotel.size}</Tag></span>
       </Space>
       <h2>{props.hotel.rent}</h2>
-      <Button type="primary" href={`/property/${props.hotel.id}`}>Show More</Button>
+      <Button type="primary" href={`/get_hotels/property/${props.hotel.id}`}>Show More</Button>
     </Card>
     </div>
   )

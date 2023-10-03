@@ -9,9 +9,9 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path="/get_hotels" element={<Home></Home>} />
+          <Route path="/" element={<Home></Home>} />
           <Route path="/property/:id" element={<Property></Property>} />
         </Routes>
       </Router>
